@@ -15,6 +15,7 @@ public class PostClimbUpComamnd extends CommandBase {
     @Override
     public void execute() {
         subsystem.armSolenoid();
+        System.out.println("arming");
     }
 
 

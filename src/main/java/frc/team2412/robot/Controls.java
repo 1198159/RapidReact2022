@@ -102,6 +102,10 @@ public class Controls {
         if (subsystems.shooterSubsystem != null) {
             bindShooterControls();
         }
+
+        if (subsystems.postClimbSubsystem != null) {
+            bindPostClimbControls();
+        }
     }
 
     public void bindClimbControls() {
@@ -114,7 +118,7 @@ public class Controls {
 
     public void bindPostClimbControls() {
         driveController.getStartButton().and(driveController.getBackButton())
-                .whenActive(new PostClimbUpComamnd(subsystems.postClimbSubsystem));
+                .whileActiveOnce(new PostClimbUpComamnd(subsystems.postClimbSubsystem));
         // climbArmUp.and(climbArmDown).and(climbArmDownManual).and(climbArmUpManual)
         // .whenActive(new PostClimbUpComamnd(subsystems.postClimbSubsystem));
     }
